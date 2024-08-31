@@ -17,7 +17,7 @@ const SignUp = () => {
         formData.append('resume', resume);
 
         try {
-            const response = await Axios.post('http://localhost:5000/register', formData, {
+            const response = await Axios.post('https://yourhr-s6lb.onrender.com', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -82,3 +82,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+

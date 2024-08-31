@@ -9,7 +9,7 @@ const UserProfile = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await Axios.get('http://localhost:5000/users');
+                const response = await Axios.get('https://yourhr-s6lb.onrender.com/users');
                 setUsers(response.data);
                 setLoading(false);
             } catch (err) {
@@ -33,7 +33,7 @@ const UserProfile = () => {
                     <li key={user._id} className="mb-4 p-4 border-b">
                         <h3 className="text-lg font-bold">{user.name}</h3>
                         <p>Email: {user.email}</p>
-                        <p>Resume: {user.resume ? <a href={`http://localhost:5000/uploads/${user.resume}`} target="_blank" rel="noopener noreferrer">View Resume</a> : 'No Resume Uploaded'}</p>
+                        <p>Resume: {user.resume ? <a href={`https://yourhr-s6lb.onrender.com/uploads/${user.resume}`} target="_blank" rel="noopener noreferrer">View Resume</a> : 'No Resume Uploaded'}</p>
                     </li>
                 ))}
             </ul>
@@ -42,3 +42,7 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
+
+
+//app.use(cors({ origin: 'https://your-frontend.netlify.app' }));
