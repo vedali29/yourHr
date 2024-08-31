@@ -4,10 +4,13 @@ import mongoose from 'mongoose';
 import User from './models/user.js';
 import connectDB from './db.js';
 import upload from './multer.js';
+import 'dotenv/config'
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 
 // Connect to MongoDB
 connectDB();
@@ -61,6 +64,7 @@ app.post('/register', upload.single('resume'), async (req, res) => {
 });
 
 // Start the server
+const PORT = process.env.PORT || 5000;
 app.listen(5000, () => {
-    console.log("Server is running on port 5000");
+    console.log(`Server is running on port ${PORT}`);
 });
